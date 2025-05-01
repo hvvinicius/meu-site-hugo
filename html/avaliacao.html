@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Avaliação</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #2E0854, #1b0033); /* Fundo roxo escuro */
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .botoes {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    button {
+      background-color: #5c2d91;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #7a3ccf;
+    }
+
+    .mensagem {
+      font-size: 1.2em;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    footer {
+      padding: 15px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #ccc;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <h1>Qual nota você me dá?</h1>
+    <div class="botoes">
+      <!-- Botões de 1 a 10 -->
+      <button onclick="avaliar(1)">1</button>
+      <button onclick="avaliar(2)">2</button>
+      <button onclick="avaliar(3)">3</button>
+      <button onclick="avaliar(4)">4</button>
+      <button onclick="avaliar(5)">5</button>
+      <button onclick="avaliar(6)">6</button>
+      <button onclick="avaliar(7)">7</button>
+      <button onclick="avaliar(8)">8</button>
+      <button onclick="avaliar(9)">9</button>
+      <button onclick="avaliar(10)">10</button>
+    </div>
+    <div id="mensagem" class="mensagem"></div>
+  </main>
+
+  <footer>
+    © 2025 HugoContainer - Página de Avaliação.
+  </footer>
+
+  <script>
+    const frases = {
+      1: "😓 Entendi, vou trabalhar muito melhor nisso.",
+      2: "😕 Ainda há bastante para melhorar.",
+      3: "😐 Obrigado! Vou me esforçar mais.",
+      4: "😶 Estamos quase lá... vou ajustar melhor.",
+      5: "🙂 Ok, há margem para melhorar.",
+      6: "😌 Estamos no caminho!",
+      7: "😃 Obrigado! Já é uma boa avaliação.",
+      8: "😄 Fico feliz com essa nota!",
+      9: "😁 Uau, muito obrigado mesmo!",
+      10: "🚀 Incrível! Obrigado pelo reconhecimento!"
+    };
+
+    function avaliar(nota) {
+      const div = document.getElementById('mensagem');
+      div.textContent = frases[nota] || "Obrigado pela sua nota!";
+    }
+  </script>
+
+</body>
+</html>
